@@ -18,13 +18,11 @@ export const Tabs = ({data}) => {
                 </React.Fragment>)
             }
             </nav>
-            <div>
             {
                 data.filter(({id}) => id === activeRestaurantId).map((item) => (
                     <Restaurant key={item.id} restaurant={item}/>
                 ))
             }
-            </div>
         </>
     );
 }
