@@ -11,7 +11,7 @@ export const MainPage = () => {
     return (
         <MainLayout>
             <RestaurantTabs
-                data={restaurants}
+                restaurants={restaurants}
                 activeRestaurantId={activeRestaurantId}
                 onTabClick={setActive} />
             <Restaurant restaurant={restaurants.find(({id}) => id === activeRestaurantId)} />

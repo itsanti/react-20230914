@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuItem } from "../MenuItem/component";
+import { Dish } from '../Dish/component';
 
 export const Menu = ({menu}) => {
     const minAmount = 0;
@@ -11,7 +11,7 @@ export const Menu = ({menu}) => {
             <ul className='menu-list'>
             {
                 menu.map((menuItem) => (
-                    <MenuItem key={menuItem.id} name={menuItem.name} range={{'min': minAmount, 'max': maxAmount}} />
+                    <Dish key={menuItem.id} name={menuItem.name} range={{'min': minAmount, 'max': maxAmount}} />
                 ))
             }
             </ul>
