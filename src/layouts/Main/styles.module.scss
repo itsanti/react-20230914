@@ -9,10 +9,6 @@ body {
     margin: 0;
     padding: 0;
     min-width: 500px;
-
-    li {
-        margin-bottom: 4px;
-    }
 }
 
 .header {
@@ -23,7 +19,7 @@ body {
     border-bottom:1px solid #cfcfcf;
     padding: 8px;
     font-family: 'Segoe UI Semibold';
-    h1 {
+    .h1 {
         margin: 0;
     }
 }

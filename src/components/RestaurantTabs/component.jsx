@@ -9,7 +9,7 @@ export const RestaurantTabs = ({restaurants, activeRestaurantId, onTabClick}) =>
             restaurants.map(({id, name}) => <Button key={id} text={name}
                 isActive={id === activeRestaurantId}
                 size="lg"
-                className={styles.btn}
+                className={styles['tab-button']}
                 onClick={() => {onTabClick(id)}}/>)
         }
         </nav>
