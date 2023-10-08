@@ -1,9 +1,6 @@
-import React, {useState} from 'react';
-import { Modal } from '../Modal/component';
-import { ReviewForm } from '../ReviewForm/component';
+import React from 'react';
 
 export const Reviews = ({reviews}) => {
-    const [isOpen, showModal] = useState(false);
     return (
         <div className='reviews'>
             <h2 className='reviews-header'>✓ Reviews</h2>
@@ -14,9 +11,6 @@ export const Reviews = ({reviews}) => {
                 ))
             }
             </ul>
-            <Modal title='Add review' isOpen={isOpen} showModal={showModal}>
-                <ReviewForm type="in-modal" onCancel={showModal} onSave={showModal}/>
-            </Modal>
         </div>
     );
 };
