@@ -5,13 +5,14 @@ import { RestaurantTabs } from '../../components/RestaurantTabs/component';
 import { Restaurant } from '../../components/Restaurant/component';
 import { MainLayout } from '../../layouts/Main/component';
 import { UserProvider } from "../../contexts/User";
+import styles from "./styles.module.scss";
 
 export const MainPage = () => {
     const [activeRestaurantId, setActive] = useState(restaurants[0].id);
 
     return (
         <UserProvider>
-            <MainLayout>
+            <MainLayout className={styles.layout}>
                 <RestaurantTabs
                     restaurants={restaurants}
                     activeRestaurantId={activeRestaurantId}
