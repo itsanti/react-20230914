@@ -10,9 +10,9 @@ export const Range = ({
 
     return (
         <div style={{'display':'inline'}}>
-            <Button text='−' disabled={amount <= min} onClick={() => setAmount(amount - 1)} />
+            <Button text='−' type='primary' size='md' disabled={amount <= min} onClick={() => setAmount(amount - 1)} />
             {'\u00A0'}<strong>{amount}</strong>{'\u00A0'}
-            <Button text='+' disabled={amount >= max} onClick={() => setAmount(amount + 1)} />
+            <Button text='+' type='primary' size='md' disabled={amount >= max} onClick={() => setAmount(amount + 1)} />
         </div>
     );
 }

@@ -1,0 +1,9 @@
+.tab-button {
+    margin-right: 8px;
+    &:last-child {
+        margin-right: 0;
+    }
+    &:hover {
+        color: #EA67A6;
+    }
+}

@@ -1,10 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
 import { Range } from '../Range/component';
 
-export const MenuItem = ({name, range}) => {
+export const Dish = ({name, range, className}) => {
     return (
-        <li className='menu-item'>
+        <li className={className}>
         {name} – <Range min={range.min} max={range.max} />
         </li>
     );
