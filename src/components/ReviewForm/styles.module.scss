@@ -1,0 +1,30 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 20px);
+    height: 100%;
+    padding: 10px;
+    
+    .row {
+        display: flex;
+        strong {
+            width: 15%;
+            text-align: right;
+            padding-right: 4px;
+        }
+        input, textarea {
+            flex-grow: 1;
+        }
+        
+        margin-bottom: 5px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.in-modal {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
