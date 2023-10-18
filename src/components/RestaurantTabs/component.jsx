@@ -1,23 +1,21 @@
 import React, { useContext }  from 'react';
-import { Button } from '../Button/component';
-import styles from "./styles.module.scss";
 import { UserContext } from "../../contexts/User";
-import { useSelector } from "react-redux";
-import { selectRestaurants } from "../../redux/entities/restaurant/selectors";
+import { RestaurantTabContainer } from "../RestarauntTab/container";
+import styles from "./styles.module.scss";
 import classNames from "classnames";
 
 export const RestaurantTabs = ({restaurantIds, activeRestaurantId, onTabClick}) => {
-    const { user } = useContext(UserContext);
-    const restaurants = useSelector(selectRestaurants);
-
+    const {user} = useContext(UserContext);
     return (
         <nav>
         {
-            restaurantIds.map((id) => <Button key={id} text={restaurants[id].name}
+            restaurantIds.map((id) => <RestaurantTabContainer
+                key={id}
+                restaurantId={id}
                 isActive={id === activeRestaurantId}
-                size="lg"
+                onClick={() => {onTabClick(id)}}
                 className={classNames(styles['tab-button'], styles[user.theme])}
-                onClick={() => {onTabClick(id)}}/>)
+            />)
         }
         </nav>
     );
