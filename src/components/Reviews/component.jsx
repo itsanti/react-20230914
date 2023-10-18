@@ -1,11 +1,8 @@
 import React from 'react';
-import { User } from '../User/component';
-import { useSelector } from "react-redux";
-import { selectReviews } from "../../redux/entities/review/selectors";
+import { ReviewContainer } from '../Review/container';
 
 
 export const Reviews = ({reviewIds}) => {
-    const reviews = useSelector(selectReviews);
 
     return (
         <div className='reviews'>
@@ -14,7 +11,7 @@ export const Reviews = ({reviewIds}) => {
             {
                 reviewIds.map((reviewId) => (
                     <li className='reviews-item' key={reviewId}>
-                        <User userId={reviews[reviewId].userId} />: {reviews[reviewId].text}
+                        <ReviewContainer reviewId={reviewId} />
                     </li>
                 ))
             }
