@@ -1,4 +1,4 @@
-import React, { useContext }  from 'react';
+import React, { useContext, useEffect }  from 'react';
 import { UserContext } from "../../contexts/User";
 import { RestaurantTabContainer } from "../RestarauntTab/container";
 import styles from "./styles.module.scss";
@@ -6,6 +6,11 @@ import classNames from "classnames";
 
 export const RestaurantTabs = ({restaurantIds, activeRestaurantId, onTabClick}) => {
     const {user} = useContext(UserContext);
+
+    useEffect(() => {
+        onTabClick(restaurantIds[0]);
+    }, []);
+
     return (
         <nav>
         {
