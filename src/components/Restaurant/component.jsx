@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu } from "../Menu/component.jsx";
+import { DishContainer } from "../Menu/container.jsx";
 import { ReviewsContainer } from "../Reviews/container.jsx";
 import { ReviewModal } from '../ReviewModal/component.jsx';
 import { useSelector } from "react-redux";
@@ -12,7 +12,7 @@ export const Restaurant = ({restaurantId}) => {
     return (
         <section className='restaurant'>
             <h1 className={styles.name}>Restaurant <span>«{restaurant.name}»</span></h1>
-            <Menu menu={restaurant.menu}/>
+            <DishContainer restaurantId={restaurantId}/>
             <ReviewsContainer restaurantId={restaurantId}/>
             <ReviewModal/>
         </section>
