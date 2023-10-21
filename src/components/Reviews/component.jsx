@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from "react-redux";
 import { ReviewContainer } from '../Review/container';
-
 
 export const Reviews = ({reviewIds}) => {
 

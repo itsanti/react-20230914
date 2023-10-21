@@ -1,9 +1,9 @@
-import { User } from "../User/component";
+import { UserContainer } from "../User/container";
 
 export const Review = ({ review }) => {
   return (
     <>
-      <User userId={review.userId} />: {review.text}
+      <UserContainer userId={review.userId} />: {review.text}
     </>
   );
 };
