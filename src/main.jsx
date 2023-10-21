@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { MainPage } from './pages/Main/component';
-import "./main.css";
+import { App } from './App'
 
 const root = document.getElementById('root');
-ReactDOM.createRoot(root).render(<MainPage />);
+ReactDOM.createRoot(root).render(<App />);

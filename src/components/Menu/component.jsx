@@ -12,10 +12,10 @@ export const Menu = ({menu}) => {
             <h2 className='menu-header'>✓ Menu</h2>
             <ul className={styles.dishList}>
             {
-                menu.map((menuItem) => (
-                    <Dish key={menuItem.id}
+                menu.map((dishId) => (
+                    <Dish key={dishId}
+                        dishId={dishId}
                         className={styles.dish}
-                        name={menuItem.name}
                         range={{'min': minAmount, 'max': maxAmount}} />
                 ))
             }

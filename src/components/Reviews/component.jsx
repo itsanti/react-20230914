@@ -1,13 +1,18 @@
 import React from 'react';
+import { ReviewContainer } from '../Review/container';
 
-export const Reviews = ({reviews}) => {
+
+export const Reviews = ({reviewIds}) => {
+
     return (
         <div className='reviews'>
             <h2 className='reviews-header'>✓ Reviews</h2>
             <ul className='reviews-list'>
             {
-                reviews.map((review) => (
-                    <li className='reviews-item' key={review.id}><strong>{review.user}</strong>: {review.text}</li>
+                reviewIds.map((reviewId) => (
+                    <li className='reviews-item' key={reviewId}>
+                        <ReviewContainer reviewId={reviewId} />
+                    </li>
                 ))
             }
             </ul>
