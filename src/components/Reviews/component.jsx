@@ -1,14 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from "react-redux";
 import { ReviewContainer } from '../Review/container';
-import {getUsers} from '../../redux/entities/user/thunks/get-users.js';
 
 export const Reviews = ({reviewIds}) => {
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getUsers());
-    }, []);
 
     return (
         <div className='reviews'>

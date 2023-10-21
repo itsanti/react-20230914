@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu } from "../Menu/component.jsx";
-import { Reviews } from "../Reviews/component.jsx";
+import { ReviewsContainer } from "../Reviews/container.jsx";
 import { ReviewModal } from '../ReviewModal/component.jsx';
 import { useSelector } from "react-redux";
 import { selectRestaurantById } from "../../redux/entities/restaurant/selectors";
@@ -13,7 +13,7 @@ export const Restaurant = ({restaurantId}) => {
         <section className='restaurant'>
             <h1 className={styles.name}>Restaurant <span>«{restaurant.name}»</span></h1>
             <Menu menu={restaurant.menu}/>
-            <Reviews reviewIds={restaurant.reviews}/>
+            <ReviewsContainer restaurantId={restaurantId}/>
             <ReviewModal/>
         </section>
     );
