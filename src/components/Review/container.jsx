@@ -1,12 +1,17 @@
 import { useSelector } from "react-redux";
-import { selectReviewById } from "../../redux/entities/review/selectors";
 import { Review } from "./component";
+import { useGetReviewsQuery } from '../../redux/services/api';
 
 export const ReviewContainer = ({ reviewId }) => {
-    const review = useSelector((state) => selectReviewById(state, reviewId));
+    const { review, isFetching } = useGetReviewsQuery(undefined, {
+        selectFromResult: result => ({
+            ...result,
+            review: result.data?.find(review => review.id === reviewId)
+        })
+    });
 
-    if (!review) {
-        return null;
+    if (isFetching) {
+        return <span>Loading...</span>;
     }
 
     return <Review review={review} />;

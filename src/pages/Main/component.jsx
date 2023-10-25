@@ -4,12 +4,24 @@ import { RestaurantTabs } from '../../components/RestaurantTabs/component';
 import { Restaurant } from '../../components/Restaurant/component';
 import { MainLayout } from '../../layouts/Main/component';
 import { UserProvider } from "../../contexts/User";
-import { useSelector } from "react-redux";
-import { selectRestaurantIds } from "../../redux/entities/restaurant/selectors";
 import styles from "./styles.module.scss";
+import { useGetRestaurantsQuery } from '../../redux/services/api';
 
 export const MainPage = () => {
-    const restaurantIds = useSelector(selectRestaurantIds);
+    const { data: restaurantIds, isFetching } = useGetRestaurantsQuery(undefined, {
+        selectFromResult: (result) => {
+            return {
+              ...result,
+              data: result?.data?.map(({ id }) => id),
+            };
+          },
+    });
+
+    //const { data, isFetching } = useGetRestaurantsQuery();
+    if (isFetching) {
+        return <div>Loading...</div>;
+    }
+
     const [activeRestaurantId, setActive] = useState(restaurantIds[0]);
 
     return (

@@ -1,9 +1,19 @@
 import React from 'react';
-import { useSelector } from "react-redux";
-import { selectUserById } from "../../redux/entities/user/selectors";
+import { useGetUsersQuery } from '../../redux/services/api';
 
 export const User = ({userId}) => {
-    const user = useSelector((state) => selectUserById(state, userId));
+    //const { isFetching } = useGetUsersQuery();
+
+    const { user, isFetching } = useGetUsersQuery(undefined, {
+        selectFromResult: result => ({
+            ...result,
+            user: result.data?.find(user => user.id === userId)
+        })
+    });
+
+    if (isFetching) {
+        return <span>Loading...</span>;
+    }
 
     return (
         <strong>{user.name}</strong>
